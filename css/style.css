@@ -1,0 +1,10 @@
+#myCarousel{
+	position: absolute;
+	top: 50px;
+	width: 630px;
+	text-align: center;
+}
+
+.carousel-indicators li {
+	visibility: hidden; 
+	}
