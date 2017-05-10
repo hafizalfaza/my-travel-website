@@ -42,8 +42,14 @@
 		<div id="content-container" style="width: 765px; white-space: nowrap; position: absolute; left:600px; bottom: 0px; overflow-x: scroll; overflow-y: hidden; text-align: center">
 			<?php 
 				if($content == 'random'){
-					for($i=0; $i<8; $i++){
-						echo '<img class="img-thumbnail" style="width: 193px;" src="'.$mixedImages[$i].'"/>';
+					if($totalMixedImages>=8){
+						for($i=0; $i<8; $i++){
+							echo '<img class="img-thumbnail" style="width: 193px;" src="'.$mixedImages[$i].'"/>';
+						}
+					}else if($totalMixedImages<8){
+						for($i=0; $i<$totalMixedImages; $i++){
+							echo '<img class="img-thumbnail" style="width: 193px;" src="'.$mixedImages[$i].'"/>';
+						}
 					}
 				}
 				if($content == 'city'){

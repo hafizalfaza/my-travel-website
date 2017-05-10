@@ -2,7 +2,7 @@
 	echo '<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
 		  <div class="container-fluid">
 			<div class="navbar-header">
-			  <a class="navbar-brand" href="index.php">Hafiz\'s TravelSite</a>
+			  <a class="navbar-brand" href="index.php">Hafizal\'s TravelSite</a>
 			</div>
 			<ul class="nav navbar-nav navbar-right">
 			  <li><a href="index.php">Home</a></li>

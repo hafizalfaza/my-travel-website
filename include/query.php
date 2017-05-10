@@ -33,4 +33,5 @@
 		$totalCityImages = count($cityImages);
 		$totalFoodImages = count($foodImages);
 		$totalPeopleImages = count($peopleImages);
+		$totalMixedImages = count($mixedImages);
 	?>
