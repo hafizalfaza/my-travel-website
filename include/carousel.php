@@ -37,7 +37,7 @@
 		<div class="item active">
 		  <h1><?php echo $countriesArray[0];?></h1>
 		  <img src="<?php echo $imagesArray[0];?>" alt="no image">
-		  <h1><a style="text-decoration: none" href="https://www.google.co.id/search?q=<?php echo $citiesArray[0] ?>&source=lnms&tbm=isch"><?php echo $citiesArray[0];?></a></h1>
+		  <h1><a style="text-decoration: none" href="https://www.google.co.id/search?q=<?php echo $citiesArray[0] ?>&source=lnms&tbm=isch" target="_blank"><?php echo $citiesArray[0];?></a></h1>
 		</div>
 
 		<?php

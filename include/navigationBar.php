@@ -13,7 +13,7 @@
 				require('selectCountryForm.php');
 			}
 			
-	echo		'<form action="https://google.com/search" method="get" class="navbar-form navbar-left">
+	echo		'<form action="https://google.com/search" method="get" target="_blank" class="navbar-form navbar-left">
 			   <div style="width: 300px;" class="input-group">
 				<input type="text" class="form-control" placeholder="Search" name="q">
 				<div class="input-group-btn">
