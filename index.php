@@ -48,6 +48,8 @@
 			$('#countrySelect').on('change', function(){
 				$('#goCountryBtn').removeAttr('disabled');
 			});
+			
+			
 		</script>
 	</body>
 </html>

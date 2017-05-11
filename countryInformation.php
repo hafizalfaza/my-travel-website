@@ -21,7 +21,10 @@
 			require('include/navigationBar.php');
 			require('include/selectCityForm.php');
 		?>
-		
+		<a href='#' onclick="return false;"><img style="width: 50px; position: absolute; left: 230px; top: 60px;" id="goCityBtn" src="data/icons/location.png"></a>
+		<div style="position: absolute; left: 290px; top: 60px;"><a href='#' onclick="return false;"><img id="cityInfo" style="width: 50px;" src="data/icons/info.jpg"/></a></div>
+		<div style="position: absolute; left: 350px; top: 60px;"><a href='#' onclick="return false;"><img id="cityImageSearch" style="width: 50px;" src="data/icons/image.png"/></a></div>
+		<div style="position: absolute; left: 410px; top: 60px;"><a href='#' onclick="return false;"><img id="cityTopSights" style="width: 50px;" src="data/icons/topsights.png"/></a></div>
 		<div id="map"></div>
 		
 		<div id="video" style="position: absolute; left: 770px; top: 140px;">
@@ -195,6 +198,20 @@
 								fitBounds(fitBoundsArray);								
 						}
 					});
+			});
+			
+			$('#cityImageSearch').on('click', function() {
+				var selectedCity = $('#citySelect').val();
+				window.open('https://www.google.co.id/search?q='+ selectedCity +'&source=lnms&tbm=isch');
+			});
+			$('#cityInfo').on('click', function() {
+				var selectedCity = $('#citySelect').val();
+				window.open('https://en.wikipedia.org/wiki/'+ selectedCity);
+			});
+			
+			$('#cityTopSights').on('click', function() {
+				var selectedCity = $('#citySelect').val();
+				window.open('https://www.google.co.id/search?q='+ selectedCity + ' top sights');
 			});
 		</script>
 	</body>
