@@ -36,15 +36,15 @@
 	  <div class="carousel-inner">
 		<div class="item active">
 		  <h1><?php echo $countriesArray[0];?></h1>
-		  <img src="<?php echo $imagesArray[0];?>" alt="Los Angeles">
-		  <h1><a style="text-decoration: none" href="https://www.google.co.id/search?q='<?php echo $citiesArray[$i] ?>'&source=lnms&tbm=isch"><?php echo $citiesArray[0];?></a></h1>
+		  <img src="<?php echo $imagesArray[0];?>" alt="no image">
+		  <h1><a style="text-decoration: none" href="https://www.google.co.id/search?q=<?php echo $citiesArray[0] ?>&source=lnms&tbm=isch"><?php echo $citiesArray[0];?></a></h1>
 		</div>
 
 		<?php
 		for($i=1;$i<$citiesTotalRows; $i++){
 			echo '<div class="item">
 				<h1>'.$countriesArray[$i].'</h1>
-				<img src="'.$imagesArray[$i].'" alt="Chicago">
+				<img src="'.$imagesArray[$i].'">
 				<h1><a style="text-decoration: none" href="https://www.google.co.id/search?q='.$citiesArray[$i].'&source=lnms&tbm=isch">'.$citiesArray[$i].'</a></h1>
 				</div>';
 		}

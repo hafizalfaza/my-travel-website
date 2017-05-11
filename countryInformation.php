@@ -13,12 +13,13 @@
 		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.css' rel='stylesheet' />
 		<style>
 			body { margin:0; padding:0; }
-			#map { position:absolute; top:0; bottom:0; width:600px; }
+			#map { position:absolute; top:120px; bottom:0; width:600px; }
 		</style>
 	</head>
 	<body>
 		<?php
 			require('include/navigationBar.php');
+			require('include/selectCityForm.php');
 		?>
 		
 		<div id="map"></div>
@@ -79,6 +80,13 @@
 				center: [<?php echo $countryLong;?>, <?php echo $countryLat;?>], // starting position
 				zoom: <?php echo $countryZoom;?> // starting zoom
 			});
+			
+			
+			function fitBounds(fitBoundsArray){
+				map.fitBounds(fitBoundsArray);
+			}
+			
+			
 			
 			function foodQuery(){
 				var content = 'food';
@@ -155,7 +163,38 @@
 			}
 			
 			$('#countrySelect').on('change', function(){
-				$('#goBtn').removeAttr('disabled');
+				$('#goCountryBtn').removeAttr('disabled');
+			});
+			$('#citySelect').on('change', function(){
+				$('#goCityBtn').removeAttr('disabled');
+			});
+			
+			
+			
+			
+			$('#goCityBtn').on('click', function() {
+				var selectedCity = $('#citySelect').val();
+				var data = 'selectedCity='+ selectedCity;					
+				$.ajax({
+							method: 'post', 
+							url: 'include/fitBoundsQuery.php', 
+							data: data,
+							dataType: "json",
+							success: function(response)
+							{
+								var tes1 = parseFloat(response[0][0]);
+								var tes2 = parseFloat(response[0][1]);
+								var tes3 = parseFloat(response[1][0]);
+								var tes4 = parseFloat(response[1][1]);
+								var fitBoundsArray1 = [];
+								var fitBoundsArray2 = [];
+								var fitBoundsArray = [];
+								fitBoundsArray1.push(tes1,tes2);
+								fitBoundsArray2.push(tes3,tes4);
+								fitBoundsArray.push(fitBoundsArray1,fitBoundsArray2)								
+								fitBounds(fitBoundsArray);								
+						}
+					});
 			});
 		</script>
 	</body>

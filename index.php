@@ -37,7 +37,7 @@
 				?>
 			</select>
 			<div class="input-group-btn">
-			  <button id="goBtn" class="btn btn-default" type="submit" disabled>
+			  <button id="goCountryBtn" class="btn btn-default" type="submit" disabled>
 				<i>Go!</i>
 			  </button>
 			</div>
@@ -46,7 +46,7 @@
 		
 		<script>
 			$('#countrySelect').on('change', function(){
-				$('#goBtn').removeAttr('disabled');
+				$('#goCountryBtn').removeAttr('disabled');
 			});
 		</script>
 	</body>
